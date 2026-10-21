@@ -11,6 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
+      theme:ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.amberAccent
+        ),
+      ),
       home: const HomePage(),
     );
   }
@@ -31,6 +36,7 @@ class HomePage extends StatelessWidget {
         ),
         ),
         body: const Center(
+          
           child: Text('Deny Dermawan - 1124160250',
           style: TextStyle(
             fontSize: 18,
