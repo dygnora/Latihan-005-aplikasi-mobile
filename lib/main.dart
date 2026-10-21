@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       title: 'Aplikasi Mahasiswa',
-      home: const HomePage(),
+      home: const ProfilePage(),
     );
   }
 }
@@ -49,5 +49,26 @@ class HomePage extends StatelessWidget {
           ),
         ),
       );
+  }
+}
+
+class ProfilePage extends StatelessWidget {
+  const ProfilePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Profile Page'),
+      ),
+      body: const Center(
+        child: Text('Hi nama saya Deny Dermawan, saya dari kelas TI 24 P SE-1',
+        style: TextStyle(
+            fontSize: 40,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
   }
 }
