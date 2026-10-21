@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.amberAccent
         ),
       ),
+      title: 'Aplikasi Mahasiswa',
       home: const HomePage(),
     );
   }
@@ -28,7 +29,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
-        title: const Text('Aplikasi Mahasiswa', 
+        title: const Text('Dashboard Mahasiswa', 
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
