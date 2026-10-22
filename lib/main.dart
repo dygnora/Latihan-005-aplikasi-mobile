@@ -59,6 +59,7 @@ class HomePage extends StatelessWidget {
         style: TextStyle(
           fontSize: 20,
           fontWeight: FontWeight.bold,
+          fontFamily: "roboto",
         ),
         ),
         ),
