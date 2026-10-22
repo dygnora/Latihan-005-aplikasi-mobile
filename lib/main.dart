@@ -16,9 +16,13 @@ class MyApp extends StatelessWidget {
           seedColor: Colors.amberAccent
         ),
       ),
-      darkTheme: ThemeData.dark(
-        useMaterial3: true,
+      darkTheme:ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.amberAccent,
+          brightness: Brightness.dark
+        ),
       ),
+      themeMode: ThemeMode.light,
       title: 'Aplikasi Mahasiswa',
       home: const ProfilePage(),
     );
