@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
         ),
         // Menambahkan useMaterial3 untuk mengatur penggunaan Material Design 3
         useMaterial3: true,
+        //
+        fontFamily: "FontdinerSwanky",
       ),
 
       // Menambahkan darkTheme untuk mengatur tema gelap aplikasi
@@ -30,6 +32,8 @@ class MyApp extends StatelessWidget {
         ),
         // Menambahkan useMaterial3 untuk mengatur penggunaan Material Design 3
         useMaterial3: true,
+        // Menambahkan fontFamily untuk mengatur font aplikasi
+        fontFamily: "FontdinerSwanky",
       ),
 
       // Menambahkan themeMode untuk mengatur mode tema aplikasi (switch antara tema terang dan gelap)
@@ -39,7 +43,7 @@ class MyApp extends StatelessWidget {
       title: 'Aplikasi Mahasiswa',
 
       // Menambahkan home untuk mengatur halaman utama aplikasi
-      home: const ProfilePage(),
+      home: const HomePage(),
     );
   }
 }
