@@ -10,20 +10,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // Menambahkan debugShowCheckedModeBanner untuk menampilkan banner debug di aplikasi
       debugShowCheckedModeBanner: true,
+
+      // Menambahkan tema untuk mengatur tema aplikasi
       theme:ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.amberAccent
         ),
+        // Menambahkan useMaterial3 untuk mengatur penggunaan Material Design 3
+        useMaterial3: true,
       ),
+
+      // Menambahkan darkTheme untuk mengatur tema gelap aplikasi
       darkTheme:ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.amberAccent,
           brightness: Brightness.dark
         ),
+        // Menambahkan useMaterial3 untuk mengatur penggunaan Material Design 3
+        useMaterial3: true,
       ),
-      themeMode: ThemeMode.light,
+
+      // Menambahkan themeMode untuk mengatur mode tema aplikasi (switch antara tema terang dan gelap)
+      themeMode: ThemeMode.dark,
+
+      // Menambahkan title untuk mengatur judul aplikasi
       title: 'Aplikasi Mahasiswa',
+
+      // Menambahkan home untuk mengatur halaman utama aplikasi
       home: const ProfilePage(),
     );
   }
