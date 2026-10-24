@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:latihan_005_aplikasi_mobile/pages/home_page.dart';
+import '../pages/home_page.dart';
+import '../pages/profile_page.dart';
 
 void main () {
   runApp(const MyApp());
@@ -47,6 +48,17 @@ class MyApp extends StatelessWidget {
 
       // Menambahkan home untuk mengatur halaman utama aplikasi
       home: const HomePage(),
+
+      // Menambahkan initialRoute untuk mengatur rute aplikasi, tapi karena kita sudah menggunakan home, 
+      //maka initialRoute HomePage tidak perlu ditambahkan, disini saya kasih komentar untuk menandakan bahwa initialRoute Homepage 
+      //tidak perlu ditambahkan
+      initialRoute: '/',
+      routes: {
+        // '/': (context) => const HomePage(),
+
+        // Menambahkan route untuk halaman profile
+        '/profile': (context) => const ProfilePage()
+      },
     );
   }
 }
@@ -98,26 +110,6 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // class HomePage extends StatelessWidget {
 //   const HomePage({super.key});
 
@@ -149,23 +141,23 @@ class MyApp extends StatelessWidget {
 //   }
 // }
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+// class ProfilePage extends StatelessWidget {
+//   const ProfilePage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile Page'),
-      ),
-      body: const Center(
-        child: Text('Hi nama saya Deny Dermawan, saya dari kelas TI 24 P SE-1',
-        style: TextStyle(
-            fontSize: 40,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Profile Page'),
+//       ),
+//       body: const Center(
+//         child: Text('Hi nama saya Deny Dermawan, saya dari kelas TI 24 P SE-1',
+//         style: TextStyle(
+//             fontSize: 40,
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
