@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../pages/home_page.dart';
+import '../pages/profile_page.dart';
 
 void main () {
   runApp(const MyApp());
@@ -46,84 +48,67 @@ class MyApp extends StatelessWidget {
 
       // Menambahkan home untuk mengatur halaman utama aplikasi
       home: const HomePage(),
-    );
-  }
-}
 
-class HomePage extends StatelessWidget {
-  const new({super.key});
+      // Menambahkan initialRoute untuk mengatur rute aplikasi, tapi karena kita sudah menggunakan home, 
+      //maka initialRoute HomePage tidak perlu ditambahkan, disini saya kasih komentar untuk menandakan bahwa initialRoute Homepage 
+      //tidak perlu ditambahkan
+      initialRoute: '/',
+      routes: {
+        // '/': (context) => const HomePage(),
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dashboard Mahasiswa',
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          fontFamily: "roboto",
-        ),
-        ),
-      ),
-
-
-      body: const Center(
-        child: Text('Deny Dermawan - 1124160250',
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
-        ),
-      ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-        onTap: (index) {
-          if (index == 1) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfilePage()),
-            );
-          }
-        },
-      ),
+        // Menambahkan route untuk halaman profile
+        '/profile': (context) => const ProfilePage()
+      },
     );
   }
 }
 
 
+// class HomePage extends StatelessWidget {
+//   const HomePage({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: MyAppBar(),
 
 
+//       body: const Center(
+//         child: Text('Deny Dermawan - 1124160250',
+//         style: TextStyle(
+//           fontSize: 18,
+//           fontWeight: FontWeight.bold,
+//         ),
+//         ),
+//       ),
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//       bottomNavigationBar: BottomNavigationBar(
+//         items: const [
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             label: 'Home',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.person),
+//             label: 'Profile',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.settings),
+//             label: 'Settings',
+//           ),
+//         ],
+//         onTap: (index) {
+//           if (index == 1) {
+//             Navigator.push(
+//               context,
+//               MaterialPageRoute(builder: (context) => const ProfilePage()),
+//             );
+//           }
+//         },
+//       ),
+//     );
+//   }
+// }
 
 // class HomePage extends StatelessWidget {
 //   const HomePage({super.key});
@@ -156,23 +141,23 @@ class HomePage extends StatelessWidget {
 //   }
 // }
 
-class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+// class ProfilePage extends StatelessWidget {
+//   const ProfilePage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Profile Page'),
-      ),
-      body: const Center(
-        child: Text('Hi nama saya Deny Dermawan, saya dari kelas TI 24 P SE-1',
-        style: TextStyle(
-            fontSize: 40,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: const Text('Profile Page'),
+//       ),
+//       body: const Center(
+//         child: Text('Hi nama saya Deny Dermawan, saya dari kelas TI 24 P SE-1',
+//         style: TextStyle(
+//             fontSize: 40,
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
