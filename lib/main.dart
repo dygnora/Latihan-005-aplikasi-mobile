@@ -50,21 +50,29 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class MyAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const MyAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: const Text('Dashboard Mahasiswa cihuy'),
+    );
+  }
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+
 class HomePage extends StatelessWidget {
-  const new({super.key});
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dashboard Mahasiswa',
-        style: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          fontFamily: "roboto",
-        ),
-        ),
-      ),
+      appBar: MyAppBar(),
 
 
       body: const Center(
@@ -103,7 +111,6 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
 
 
 
