@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:latihan_005_aplikasi_mobile/pages/home_page.dart';
 
 void main () {
   runApp(const MyApp());
@@ -50,67 +51,52 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyAppBar extends StatelessWidget
-    implements PreferredSizeWidget {
-  const MyAppBar({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: const Text('Dashboard Mahasiswa cihuy'),
-    );
-  }
+// class HomePage extends StatelessWidget {
+//   const HomePage({super.key});
 
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: MyAppBar(),
 
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+//       body: const Center(
+//         child: Text('Deny Dermawan - 1124160250',
+//         style: TextStyle(
+//           fontSize: 18,
+//           fontWeight: FontWeight.bold,
+//         ),
+//         ),
+//       ),
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: MyAppBar(),
-
-
-      body: const Center(
-        child: Text('Deny Dermawan - 1124160250',
-        style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
-        ),
-      ),
-
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-        onTap: (index) {
-          if (index == 1) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ProfilePage()),
-            );
-          }
-        },
-      ),
-    );
-  }
-}
+//       bottomNavigationBar: BottomNavigationBar(
+//         items: const [
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.home),
+//             label: 'Home',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.person),
+//             label: 'Profile',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: Icon(Icons.settings),
+//             label: 'Settings',
+//           ),
+//         ],
+//         onTap: (index) {
+//           if (index == 1) {
+//             Navigator.push(
+//               context,
+//               MaterialPageRoute(builder: (context) => const ProfilePage()),
+//             );
+//           }
+//         },
+//       ),
+//     );
+//   }
+// }
 
 
 
