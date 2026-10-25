@@ -41,6 +41,8 @@ class MainLayout extends StatelessWidget {
             Navigator.pushReplacementNamed(context, '/');
           } else if (index == 1) {
             Navigator.pushReplacementNamed(context, '/profile');
+          } else if (index == 2) {
+            Navigator.pushReplacementNamed(context, '/setting');
           }
         },
         
