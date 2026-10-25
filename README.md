@@ -1,20 +1,32 @@
 # Aplikasi Mahasiswa
 
-Aplikasi mobile sederhana yang dikembangkan menggunakan Flutter sebagai sarana belajar pengembangan aplikasi Android dengan Dart.
+Aplikasi mobile sederhana yang dikembangkan menggunakan **Flutter** dan **Dart** sebagai sarana belajar pengembangan aplikasi Android. Project ini mencakup pembuatan halaman, reusable widget, navigasi, pengaturan tema, serta penggunaan aset gambar dan font kustom.
 
 ## 📌 Tentang Project
 
-Project ini berfokus pada pembelajaran dasar Flutter, khususnya penggunaan `Scaffold`, pembuatan reusable widget, pengaturan tema aplikasi, serta navigasi antarhalaman menggunakan named routes.
+Project ini dibuat untuk mempelajari konsep dasar pengembangan aplikasi mobile menggunakan Flutter, mulai dari struktur aplikasi hingga implementasi komponen antarmuka yang dapat digunakan kembali.
 
 ## ✨ Fitur
 
 - **Home Page** — Halaman utama aplikasi.
-- **Profile Page** — Halaman profil yang dapat diakses melalui menu navigasi.
-- **Reusable Main Layout** — Menggunakan layout bersama untuk AppBar, Drawer, dan konten halaman.
-- **Navigation Drawer** — Menu navigasi untuk berpindah halaman Home dan Profile.
-- **Theme Configuration** — Pengaturan tema terang dan gelap menggunakan `ThemeData`.
+- **Profile Page** — Menampilkan foto profil, nama, kelas, dan program studi.
+- **Settings Page** — Halaman pengaturan yang saat ini masih dalam tahap pengembangan.
+- **Reusable Main Layout** — Menggunakan layout bersama yang mencakup AppBar, Drawer, Floating Action Button, dan Bottom Navigation Bar.
+- **Navigation Drawer** — Menu navigasi samping untuk berpindah halaman.
+- **Bottom Navigation Bar** — Navigasi bawah untuk Home, Profile, dan Settings.
+- **Floating Action Button (FAB)** — Tombol aksi yang menampilkan SnackBar ketika ditekan.
+- **Named Routes** — Mengatur navigasi antarhalaman menggunakan nama rute.
+- **Theme Configuration** — Mengatur tema terang dan gelap menggunakan `ThemeData`.
 - **Custom Font** — Menggunakan font Fontdiner Swanky.
+- **Profile Image Asset** — Menampilkan foto profil menggunakan aset lokal.
 - **Material Design 3** — Menggunakan sistem desain Material 3 dari Flutter.
+
+## 🛠️ Teknologi yang Digunakan
+
+- Flutter
+- Dart
+- Material Design 3
+- Visual Studio Code
 
 ## 📁 Struktur Project
 
@@ -27,24 +39,41 @@ lib/
 │   └── app_drawer.dart
 └── pages/
     ├── home_page.dart
-    └── profile_page.dart
+    ├── profile_page.dart
+    └── setting_page.dart
+
+assets/
+├── fonts/
+│   └── FontdinerSwanky-Regular.ttf
+└── images/
+    └── profile.jpg
 ```
 
-| File | Fungsi |
+### Fungsi File dan Folder
+
+| File/Folder | Fungsi |
 |---|---|
-| `main.dart` | Titik awal aplikasi dan konfigurasi tema serta navigasi. |
-| `main_layout.dart` | Layout bersama yang berisi AppBar, Drawer, dan body. |
-| `app_drawer.dart` | Widget menu navigasi untuk berpindah halaman. |
-| `home_page.dart` | Halaman utama aplikasi. |
-| `profile_page.dart` | Halaman profil pengguna. |
+| `main.dart` | Titik awal aplikasi serta konfigurasi tema dan navigasi. |
+| `layouts/main_layout.dart` | Layout bersama yang berisi AppBar, Drawer, FAB, Bottom Navigation Bar, dan body. |
+| `widgets/app_drawer.dart` | Widget menu navigasi samping. |
+| `pages/home_page.dart` | Halaman utama aplikasi. |
+| `pages/profile_page.dart` | Halaman profil pengguna. |
+| `pages/setting_page.dart` | Halaman pengaturan. |
+| `assets/fonts/` | Menyimpan font kustom aplikasi. |
+| `assets/images/` | Menyimpan gambar yang digunakan aplikasi. |
 
 ## 🚀 Menjalankan Project
 
 ### Prasyarat
 
-Pastikan Flutter SDK dan Dart sudah terpasang di komputer.
+Pastikan perangkat kamu sudah memiliki:
 
-### Langkah instalasi
+- Flutter SDK
+- Dart SDK
+- Visual Studio Code atau editor lain yang mendukung Flutter
+- Emulator Android atau perangkat Android
+
+### Langkah Instalasi
 
 1. Clone repository:
 
@@ -73,23 +102,27 @@ Pastikan Flutter SDK dan Dart sudah terpasang di komputer.
 ## 📚 Materi yang Dipelajari
 
 - Struktur dasar aplikasi Flutter.
-- Penggunaan `MaterialApp` dan `ThemeData`.
-- Penggunaan `Scaffold`, `AppBar`, dan `Drawer`.
+- Penggunaan `MaterialApp`, `ThemeData`, dan `Scaffold`.
+- Penggunaan `AppBar`, `Drawer`, dan `BottomNavigationBar`.
 - Pembuatan reusable widget menggunakan `StatelessWidget`.
-- Penggunaan constructor, parameter `required`, dan variabel `final`.
+- Penggunaan constructor, `super.key`, parameter `required`, dan variabel `final`.
+- Penggunaan `Column`, `Center`, dan `Text` untuk menyusun antarmuka.
 - Navigasi antarhalaman menggunakan `Navigator` dan named routes.
-- Pengelolaan struktur folder agar kode lebih terorganisasi.
+- Penggunaan `FloatingActionButton` dan `SnackBar`.
+- Pengelolaan aset gambar dan font kustom.
+- Pengorganisasian kode menggunakan struktur folder yang terpisah.
 
 ## 📝 Status Project
 
-**Status:** Dalam pengembangan dan pembelajaran.
+**Status: Dalam pengembangan dan pembelajaran.**
 
-Fitur dan struktur aplikasi dapat berubah seiring proses belajar Flutter.
+Project ini merupakan sarana belajar Flutter secara bertahap. Fitur, tampilan, dan struktur aplikasi dapat berubah seiring bertambahnya materi yang dipelajari.
 
 ## 📌 Code main.dart sebagai referensi
 
 ````dart
 import 'package:flutter/material.dart';
+import 'package:latihan_005_aplikasi_mobile/pages/setting_page.dart';
 import '../pages/home_page.dart';
 import '../pages/profile_page.dart';
 
@@ -148,7 +181,9 @@ class MyApp extends StatelessWidget {
         // '/': (context) => const HomePage(),
 
         // Menambahkan route untuk halaman profile
-        '/profile': (context) => const ProfilePage()
+        '/profile': (context) => const ProfilePage(),
+
+        '/setting': (context) => const SettingPage(),
       },
     );
   }

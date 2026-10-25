@@ -9,7 +9,9 @@ class ProfilePage extends StatelessWidget {
     return MainLayout(
       title: 'Profile',
       body: Center(
+        // Menambahkan widget Column untuk menampilkan beberapa widget secara vertikal
         child: Column(
+          // Menambahkan mainAxisAlignment untuk mengatur posisi widget di tengah halaman
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
