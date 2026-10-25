@@ -23,6 +23,42 @@ class MainLayout extends StatelessWidget {
       // Menambahkan drawer untuk menampilkan menu navigasi ke halaman lain
       drawer: const AppDrawer(),
       body: body,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Menambahkan aksi untuk tombol FAB, disini saya menambahkan aksi untuk menampilkan snackbar
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Tombol FAB ditekan!'),
+            ),
+          );
+        },
+        child: const Icon(Icons.add),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (index) {
+          // Menambahkan aksi untuk tombol navigasi bawah, disini saya menambahkan aksi untuk menavigasi ke halaman lain
+          if (index == 0) {
+            Navigator.pushReplacementNamed(context, '/');
+          } else if (index == 1) {
+            Navigator.pushReplacementNamed(context, '/profile');
+          }
+        },
+        
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+        ],
+      ),
     );
   }
 }
