@@ -22,14 +22,23 @@ class ProfilePage extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
+                color: Colors.deepOrangeAccent
               ),
             ),
             SizedBox(height: 10),
             Text(
-              '1124160250',
+              'TI 24 P SE-1',
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.grey,
+                color: Colors.amberAccent,
+              ),
+            ),
+            SizedBox(height: 10),
+            Text(
+              'Teknik Informatika',
+              style: TextStyle(
+                fontSize: 18,
+                color: Colors.lightGreenAccent,
               ),
             ),
           ],
