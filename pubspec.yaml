@@ -59,3 +59,5 @@ flutter:
     - family: FontdinerSwanky
       fonts:
         - asset: assets/fonts/FontdinerSwanky-Regular.ttf
+        - asset: assets/images/profile.jpg
+        

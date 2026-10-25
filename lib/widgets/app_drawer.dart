@@ -29,6 +29,13 @@ class AppDrawer extends StatelessWidget {
               Navigator.pushReplacementNamed(context, '/profile');
             },
           ),
+          ListTile(
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/setting');
+            },
+          ),
         ],
       )
     );

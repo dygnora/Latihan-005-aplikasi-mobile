@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:latihan_005_aplikasi_mobile/pages/setting_page.dart';
 import '../pages/home_page.dart';
 import '../pages/profile_page.dart';
 
@@ -57,7 +58,9 @@ class MyApp extends StatelessWidget {
         // '/': (context) => const HomePage(),
 
         // Menambahkan route untuk halaman profile
-        '/profile': (context) => const ProfilePage()
+        '/profile': (context) => const ProfilePage(),
+
+        '/setting': (context) => const SettingPage(),
       },
     );
   }
